@@ -1025,20 +1025,19 @@ function init() {
 }
 
 function apply(elements) {
-    var $_header =
-        createHeader() +
-        createBodyHeader(elements.city) +
-        createBody(
-            elements.city.valueAr,
-            elements.city.valueDelimiter,
-            elements.city.valueEn
-        ) +
-        closeBodyHeader() +
-        closeHeader();
-    var $_body = body(elements.elements);
-    document.getElementById("mainContainer").innerHTML +=
-        $_br + $_header + $_body;
-    $_br = '<div class="clear-text"></div>';
+    createHeader() +
+    createBodyHeader(elements.city) +
+    createBody(
+      elements.city.valueAr,
+      elements.city.valueDelimiter,
+      elements.city.valueEn
+    ) +
+    closeBodyHeader() +
+    closeHeader();
+  var $_body = body(elements.elements);
+  document.getElementById("mainContainer").innerHTML +=
+    $_br + $_header + $_body;
+  $_br = '<div class="clear-text"></div>';
 }
 
 function body(elements) {
@@ -1076,8 +1075,8 @@ function createHeader() {
 }
 
 function closeHeader() {
-    var $_closeBodyHeader = "</div>";
-    return $_closeBodyHeader;
+  var $_closeHeader = "</div>";
+  return $_closeHeader;
 }
 
 function createBodyHeader(header) {
@@ -1098,30 +1097,30 @@ function closeBodyHeader() {
 }
 
 function createBody(valueAr, valueDelimiter, valueEn) {
-    var $_bodyHtml =
-        '<div class="row kBody">' +
-        "<ul>" +
-        "<li>" +
-        '<span class="name" dir="auto">' +
-        valueAr +
-        "</span> " +
-        valueDelimiter +
-        valueEn +
-        "</li>" +
-        "</ul>" +
-        "</div>";
-    return $_bodyHtml;
+  var $_body =
+    '<div class="row kBody">' +
+    "<ul>" +
+    "<li>" +
+    '<span class="name" dir="auto">' +
+    valueAr +
+    "</span> " +
+    valueDelimiter +
+    valueEn +
+    "</li>" +
+    "</ul>" +
+    "</div>";
+  return $_body;
 }
 
 function createCopyButton(valueAr, valueDelimiter, valueEn) {
-    var $_bodyHtml =
-        '<div class="row kBody" style="padding: 9px;">' +
-        '<button type="button" value="' +
-        valueAr +
-        '" class="btn btn-primary kBtnCopy" onclick="copyToClipboard(this)">' +
-        valueEn +
-        "</button> " +
-        "</div>";
+  var $_copyButton =
+    '<div class="row kBody" style="padding: 9px;">' +
+    '<button type="button" value="' +
+    valueAr +
+    '" class="btn btn-primary kBtnCopy" onclick="copyToClipboard(this)">' +
+    valueEn +
+    "</button> " +
+    "</div>";
 
-    return $_bodyHtml;
+  return $_copyButton;
 }
